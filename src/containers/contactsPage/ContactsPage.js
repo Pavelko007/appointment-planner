@@ -16,11 +16,11 @@ export const ContactsPage = (props) => {
     if the contact name is not a duplicate
     */
     if (!isDuplicateName) {
-    props.addContact(name, phone, email);
-    setName("");
-    setPhone("");
-    setEmail("");
-  };
+      props.addContact(name, phone, email);
+      setName("");
+      setPhone("");
+      setEmail("");
+    };
   }
 
   //check for contact name in the contacts array
@@ -42,6 +42,7 @@ export const ContactsPage = (props) => {
       <hr />
       <section>
         <h2>Contacts</h2>
+        <TileList data={props.contacts}/>
       </section>
     </div>
   );
