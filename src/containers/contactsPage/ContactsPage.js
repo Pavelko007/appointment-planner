@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
-export const ContactsPage = () => {
+export const ContactsPage = (props) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -17,10 +17,10 @@ export const ContactsPage = () => {
     */
   };
 
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
+  //check for contact name in the contacts array
+  useEffect(() =>
+    setIsDuplicateName(props.contacts.some(contact => contact.name === name))
+    , [name, props.contacts])
 
   return (
     <div>
