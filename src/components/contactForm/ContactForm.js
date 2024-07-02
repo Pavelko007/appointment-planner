@@ -16,7 +16,7 @@ export const ContactForm = ({
           onChange={(e) => setName(e.target.value)} />
       </label>
       <label>
-        Phone: <input type='tel' value={phone}
+        Phone XXX-XXX-XXXX: <input type='tel' value={phone} pattern='^\d{3}-\d{3}-\d{4}$'
           onChange={(e) => setPhone(e.target.value)} />
       </label>
       <label>
