@@ -13,16 +13,20 @@ function App() {
   contacts and appointments
   */
 
+  const addContact = (name, phone, email) => {
+    setContacts([...contacts, { name, phone, email }]);
+  }
+
   const router = createBrowserRouter(createRoutesFromElements(
-    <Route path="/" element={ <Root/> }>
-      <Route index element={ <Navigate to={ROUTES.CONTACTS} replace/> }/>
-      <Route path={ROUTES.CONTACTS} element={ <ContactsPage /> /* Add props to ContactsPage */ }/>
-      <Route path={ROUTES.APPOINTMENTS} element={ <AppointmentsPage /> /* Add props to AppointmentsPage */ }/>
+    <Route path="/" element={<Root />}>
+      <Route index element={<Navigate to={ROUTES.CONTACTS} replace />} />
+      <Route path={ROUTES.CONTACTS} element={<ContactsPage /> /* Add props to ContactsPage */} />
+      <Route path={ROUTES.APPOINTMENTS} element={<AppointmentsPage /> /* Add props to AppointmentsPage */} />
     </Route>
   ));
 
   return (
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   );
 }
 
