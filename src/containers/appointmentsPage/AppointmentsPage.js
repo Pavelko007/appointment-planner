@@ -5,7 +5,7 @@ import { TileList } from "../../components/tileList/TileList";
 
 export const AppointmentsPage = (props) => {
   const [name, setName] = useState("");
-  const [contact, setContact] = useState({});
+  const [contact, setContact] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
@@ -16,7 +16,7 @@ export const AppointmentsPage = (props) => {
 
     //and clear data  
     setName("");
-    setContact({});
+    setContact("");
     setDate("");
     setTime("");
   };
@@ -37,6 +37,7 @@ export const AppointmentsPage = (props) => {
       <hr />
       <section>
         <h2>Appointments</h2>
+        <TileList data={props.appointments} />
       </section>
     </div>
   );
