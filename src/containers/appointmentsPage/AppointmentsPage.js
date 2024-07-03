@@ -4,7 +4,7 @@ import { AppointmentForm } from "../../components/appointmentForm/AppointmentFor
 import { TileList } from "../../components/tileList/TileList";
 
 export const AppointmentsPage = (props) => {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [contact, setContact] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -12,10 +12,10 @@ export const AppointmentsPage = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     //  Add contact info 
-    props.addAppointment(name, contact, date, time);
+    props.addAppointment(title, contact, date, time);
 
     //and clear data  
-    setName("");
+    setTitle("");
     setContact("");
     setDate("");
     setTime("");
@@ -27,7 +27,7 @@ export const AppointmentsPage = (props) => {
         <h2>Add Appointment</h2>
         <AppointmentForm
           contacts={props.contacts}
-          name={name} setName={setName}
+          title={title} setTitle={setTitle}
           contact={contact} setContact={setContact}
           date={date} setDate={setDate}
           time={time} setTime={setTime}
