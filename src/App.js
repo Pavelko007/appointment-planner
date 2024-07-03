@@ -23,7 +23,7 @@ function App() {
       />
       <Route
         path={ROUTES.APPOINTMENTS}
-        element={<AppointmentsPage appointments={appointments} addAppointment={addAppointment} />}
+        element={<AppointmentsPage appointments={appointments} contacts={contacts} addAppointment={addAppointment} />}
       />
     </Route>
   ));
